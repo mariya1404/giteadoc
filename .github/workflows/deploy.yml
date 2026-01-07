@@ -8,6 +8,11 @@ jobs:
   deploy:
     runs-on: self-hosted
 
+    env:
+      SMTP_USER: ${{ secrets.SMTP_USER }}
+      SMTP_PASS: ${{ secrets.SMTP_PASS }}
+      SMTP_FROM: ${{ secrets.SMTP_FROM }}
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
