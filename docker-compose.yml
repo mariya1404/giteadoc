@@ -14,9 +14,9 @@ services:
       - GITEA__mailer__PROTOCOL=smtps
       - GITEA__mailer__SMTP_ADDR=smtp.gmail.com
       - GITEA__mailer__SMTP_PORT=465
-      - GITEA__mailer__USER=xxxxxxxxxx@gmail.com
-      - GITEA__mailer__PASSWD=xxxxxxxxxxxxxxxx 
-      - GITEA__mailer__FROM=xxxxxxxxxx@gmail.com
+      - GITEA__mailer__USER=${SMTP_USER}
+      - GITEA__mailer__PASSWD=${SMTP_PASS}
+      - GITEA__mailer__FROM=${SMTP_FROM}
       - GITEA__mailer__TLS=true
 
       # --- DATABASE CONFIG (PostgreSQL) ---
@@ -49,6 +49,7 @@ volumes:
   gitea_data:
 
   gitea_db_data:
+
 
 
 
