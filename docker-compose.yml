@@ -24,7 +24,7 @@ services:
       - GITEA__database__HOST=gitea_db:5432
       - GITEA__database__NAME=gitea
       - GITEA__database__USER=gitea
-      - GITEA__database__PASSWD=gitea123
+      - GITEA__database__PASSWD=${DB_PASSWORD}
 
     ports:
       - "3001:3000"
@@ -40,7 +40,7 @@ services:
     restart: always
     environment:
       - POSTGRES_USER=gitea
-      - POSTGRES_PASSWORD=gitea123
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
       - POSTGRES_DB=gitea
     volumes:
       - gitea_db_data:/var/lib/postgresql/data
@@ -49,6 +49,7 @@ volumes:
   gitea_data:
 
   gitea_db_data:
+
 
 
 
