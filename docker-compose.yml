@@ -40,7 +40,7 @@ services:
     restart: always
     environment:
       - POSTGRES_USER=gitea
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_PASSWORD=gitea123
       - POSTGRES_DB=gitea
     volumes:
       - gitea_db_data:/var/lib/postgresql/data
@@ -49,6 +49,7 @@ volumes:
   gitea_data:
 
   gitea_db_data:
+
 
 
 
